@@ -24,9 +24,11 @@ jobs:
         GO111MODULE: on
         GOPATH: /home/runner/work/
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TAGNAME: ${{ github.ref }}
+        REF: ${{ github.ref }}
       run: |
+        export TAGNAME=`git describe --tags --abbrev=0`
         echo "========================================================="
+        echo "DEBUG:" $REF
         echo "DEBUG:" $TAGNAME
         echo "========================================================="
         make cross
