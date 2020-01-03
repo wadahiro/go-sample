@@ -37,5 +37,5 @@ jobs:
         ls dist/
         echo "========================================================="
         go get -u github.com/tcnksm/ghr
-        $GOPATH/bin/ghr -n ${TAGNAME} -b "Release ${TAGNAME}" -draft ${TAGNAME} dist/
+        $GOPATH/bin/ghr -n ${TAGNAME} -b "Release ${TAGNAME}" -prerelease ${TAGNAME} dist/
 
